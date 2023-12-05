@@ -7,6 +7,7 @@ def breakdown_file(data: bytes) -> list:
     hamming = Hamming()
     half_payload = PAYLOAD_SIZE // 2
     total_chunks = len(data) // half_payload
+    if total_chunks == 0: total_chunks = 1
     processed_chunks = 0
 
     def update_progress_bar():
